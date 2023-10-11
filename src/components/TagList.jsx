@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import TagInput     from './TagInput'
 
-export default function TagList({ hidden }) {
+export default function TagList({ hidden, tags, index }) {
 
   let [inputCounter, setInputCounter] = useState(1)
 
@@ -14,11 +14,11 @@ export default function TagList({ hidden }) {
      {
        inputCounter == 1
        ?
-       <TagInput />
+       <TagInput tags={tags} index={index} />
        :
        <>
-        <TagInput />
-        <TagInput />
+        <TagInput tags={tags} index={index} />
+        <TagInput tags={tags} index={index} />
        </>
      }
       <p 

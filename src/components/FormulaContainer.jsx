@@ -8,7 +8,7 @@ export default function FormulaContainer() {
   return (
     <div className="w-3/4 p-10 border border-zinc-300 h-2/3 overflow-y-auto">  
       {
-        formulas.map(formula => <Formula formula={formula} />)
+        formulas.map((formula, index) => <Formula formula={formula} index={index} />)
       }
     </div>
   )

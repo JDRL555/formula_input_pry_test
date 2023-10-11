@@ -1,4 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice }  from '@reduxjs/toolkit'
+import Formulas         from '../../../utils/formulas.js'
+
 
 const formulaSlice = createSlice({
   name: "formula",
@@ -7,42 +9,48 @@ const formulaSlice = createSlice({
       {
         name: "MRR - Dashboard",
         value: 0.00,
-        formula: null,
+        tags: [
+          {
+            text: "ROUND",
+            value: Formulas.ROUND,
+            type: "function"
+          }
+        ],
       },
       {
         name: "New Costumer Count - Dashboard",
         value: 3,
-        formula: null,
+        tags: null,
       },
       {
         name: "Churned Customer Count - Dashboard",
         value: -1,
-        formula: null,
+        tags: null,
       },
       {
         name: "Existing Customer Count - Dashboard",
         value: 1,
-        formula: null,
+        tags: null,
       },
       {
         name: "Churn Rate",
         value: 0,
-        formula: null,
+        tags: null,
       },
       {
         name: "ARR",
         value: 0.00,
-        formula: null,
+        tags: null,
       },
       {
         name: "Monthly ACV",
         value: 0.00,
-        formula: null,
+        tags: null,
       },
       {
         name: "Customer LTV",
         value: 0.00,
-        formula: null,
+        tags: null,
       },
     ]
   },

@@ -2,7 +2,7 @@ import { useState }   from 'react'
 import { DATE_VALUE } from '../utils/consts.js'
 import TagList        from '../components/TagList.jsx'
 
-export default function Formula({ formula }) {
+export default function Formula({ formula, index }) {
   
   const [hide, setHide] = useState(true)
   
@@ -24,13 +24,13 @@ export default function Formula({ formula }) {
           <i class="fa-solid fa-ellipsis text-xl cursor-pointer text-zinc-500 hover:text-zinc-800 transition duration-300"></i>
         </div>
       </section>
-      <section className={`border border-zinc-300 flex items-center justify-between ${!hide && "rounded-b-md"} bg-blue-50 p-5`}>
+      <section className={`border border-zinc-300 flex items-center justify-between ${hide && "rounded-b-md"} bg-blue-50 p-5`}>
         <h1 className="text-3xl">
           {formula.value} $
         </h1>
         <input className="bg-zinc-200 px-3 rounded-md text-xs p-1 cursor-pointer outline-none" type="date" value={DATE_VALUE} />
       </section>
-      <TagList hidden={hide} />
+      <TagList hidden={hide} tags={formula.tags} index={index} />
     </div>
   )
 }
